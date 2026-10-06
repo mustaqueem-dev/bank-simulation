@@ -2,7 +2,7 @@
   {
     "accountNumber": "ACC_001",
     "holderName": "Md Mustaqueem",
-    "balance": 7000,
+    "balance": 3000,
     "transactions": [
       {
         "type": "DEPOSIT",
@@ -15,9 +15,22 @@
         "amount": 2000,
         "balanceAfter": 7000,
         "createdAt": "2026-10-05T05:53:45.518Z"
+      },
+      {
+        "type": "WITHDRAW",
+        "amount": 2000,
+        "balanceAfter": 5000,
+        "createdAt": "2026-10-05T06:05:16.528Z"
+      },
+      {
+        "type": "TRANSFER_OUT",
+        "amount": 2000,
+        "to": "ACC_002",
+        "balanceAfter": 3000,
+        "createdAt": "2026-10-05T06:25:19.866Z"
       }
     ],
     "createdAt": "2026-10-05T05:52:03.689Z",
-    "updatedAt": "2026-10-05T05:53:45.519Z"
+    "updatedAt": "2026-10-05T06:25:19.866Z"
   }
 ]

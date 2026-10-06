@@ -3,7 +3,13 @@ import {
     handleListAccounts,
     handleGetAccount,
     handleDeposit,
+    handleWithdraw,
+    handleTransfer,
+    handleTransactions,
+    handleDeleteAccount,
+    handleGetBalance,
 } from "./controller/bank.controller.js";
+import { handleError } from "./errors/error-handler.js";
 
 const command = process.argv[2];
 
@@ -30,12 +36,27 @@ async function main() {
         case "deposit":
             await handleDeposit(options);
             break;
+        case "withdraw":
+            await handleWithdraw(options);
+            break;
+        case "transfer":
+            await handleTransfer(options);
+            break;
+        case "transactions":
+            await handleTransactions(options);
+            break;
+        case "delete":
+            await handleDeleteAccount(options);
+            break;
+        case "balance":
+            await handleGetBalance(options);
+            break;
         default:
             console.log("Unknown command.")
     }
 }
 
 main().catch((error) => {
-    console.error(error);
+    handleError(error);
     process.exitCode = 1;
 })
